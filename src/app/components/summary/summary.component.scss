@@ -1,0 +1,13 @@
+:host .card{
+    background: #333333;
+}
+
+:host .card.increase{
+    background: #558b2f;
+    color: #fff;
+}
+
+:host .card.decrease{
+    background: #c62828;
+    color: #fff;
+}
