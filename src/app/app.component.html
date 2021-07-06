@@ -16,8 +16,8 @@
       </a>
     </div>
   </header>
-  <div class="content-container" *ngIf="stocks">
-    <summary [stock]="Stocks[0]"></summary>
-  </div>
+  <main class="content-container" *ngIf="stocks">
+    <summary [stock]="stocks[0]"></summary>
+  </main>
 </div>
 <router-outlet></router-outlet>
