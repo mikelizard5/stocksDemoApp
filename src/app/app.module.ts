@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import "@clr/icons"
 import "@cds/core/icon";
 import { SummaryComponent } from './components/summary/summary.component'
+import { StocksService } from './services/stocks.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import { SummaryComponent } from './components/summary/summary.component'
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

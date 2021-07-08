@@ -3,14 +3,15 @@ import { StocksService, StockInterface } from './services/stocks.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [StocksService]
 })
 export class AppComponent {
   title = 'stocks'
-  stocks: any|Array<StockInterface>;
+  stocks: Array<StockInterface> = [];
 
-  constructor(service: StocksService){
-    service.load(['AAPL'])?.subscribe(stocks => {
+  constructor(private service: StocksService){
+    this.service.load(['aapl'])?.subscribe(stocks => {
       this.stocks = stocks;
     });
   }
