@@ -26,9 +26,7 @@ export class StocksService {
     stocks.splice(stocks.indexOf(stock), 1);
     return this.get();
   }
-  load(symbols: any): void|Observable<Array<StockInterface>>{
-    if (symbols){
-      return this.http.get<Array<StockInterface>>(service +'/stocks/snapshot?symbols=' + symbols.join());
-    }
+  load(symbols: string[]): Observable<Array<StockInterface>>{
+    return this.http.get<Array<StockInterface>>(service +'/stocks/snapshot?symbols=' + symbols.join());
   }
 }
