@@ -1,6 +1,19 @@
-.header-nav{
-    :hover{
+header{
+    width: 100vw;
+    
+    .header-nav{
+        :hover{
         border: solid 2px black;
-        color: lightblue;
+        color: black;
+        } 
+    } 
+    
+    .title{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .help{
+        color: white;
     }
 }

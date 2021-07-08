@@ -1,13 +1,18 @@
-:host .card{
-    background: #333333;
-}
-
-:host .card.increase{
-    background: #558b2f;
-    color: #fff;
-}
-
-:host .card.decrease{
-    background: #c62828;
-    color: #fff;
+.clr-row{
+    padding-right: 20px;
+    padding-left: 20px;
+    .card{
+        background: #333333;
+        width: 20vw;
+        height: 15vh;
+        .card-header{
+            color:white;
+        }
+        &.increase{
+            background: #558b2f;
+        }
+        &.decrease{
+            background: #c62828;
+        }
+    }
 }

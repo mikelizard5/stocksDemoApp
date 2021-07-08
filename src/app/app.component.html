@@ -1,8 +1,7 @@
 <div class="main-container">
-  <header class="header-1">
+  <header class="header-4">
     <div class="branding">
       <span class="title">
-          <cds-icon shape="home"></cds-icon>
           Stock Tracker
       </span>
     </div>
@@ -12,12 +11,12 @@
     </div>
     <div class="header-actions">
       <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
-        <cds-icon shape="help-info"></cds-icon>
+        <clr-icon shape="help-info"></clr-icon>
       </a>
     </div>
   </header>
-  <main class="content-container" *ngIf="stocks">
-    <summary [stock]="stocks[0]"></summary>
+  <main class="content-container" style='padding-left: 20px;'>
+    <dashboard></dashboard>
   </main>
 </div>
 <router-outlet></router-outlet>

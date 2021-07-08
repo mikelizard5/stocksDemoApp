@@ -1,0 +1,8 @@
+<div class='clr-row'>
+    <div *ngIf="!stocks" style="text-align: center;">
+        Loading
+    </div>
+    <div *ngFor="let stock of stocks">
+        <summary [stock]="stock"></summary>
+    </div>
+</div>
