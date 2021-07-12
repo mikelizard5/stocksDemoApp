@@ -9,11 +9,13 @@ import { SummaryComponent } from './components/summary/summary.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StocksService } from './services/stocks.service';
+import { ManageComponent } from './components/manage/manage.component';
 @NgModule({
   declarations: [
     AppComponent,
     SummaryComponent,
-    DashboardComponent
+    DashboardComponent,
+    ManageComponent
   ],
   imports: [
     BrowserModule,
