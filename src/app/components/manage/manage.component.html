@@ -1,15 +1,17 @@
-<form style="margin-bottom: 5px;" (submit)="add()">
-    <input name="stock" [(ngModel)]="stock" type="text" placeholder="Add Stock"/>
-</form>
-<table class="table">
-    <tbody>
-        <tr *ngFor="let symbol of symbols">
-            <td style="padding-top: 25px;">{{symbol}}</td>
-            <td style="padding-top: 6px;">
-                <button class="btn btn-link" (click)="remove(symbol)">
-                    Remove
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div>
+    <form clrForm (submit)="add()">
+        <input clrInput name="stock" [(ngModel)]="stock" type="text" placeholder="Add Stock"/>
+    </form>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let symbol of symbols">
+                <td id="symbol">{{symbol}}</td>
+                <td>
+                    <button class="btn btn-link" (click)="remove(symbol)">
+                        <b>remove</b>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
