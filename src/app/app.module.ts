@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StocksService } from './services/stocks.service';
 import { ManageComponent } from './components/manage/manage.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ManageComponent } from './components/manage/manage.component';
     ClarityModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ClrIconModule
+    ClrIconModule,
+    FormsModule
   ],
   providers: [StocksService],
   bootstrap: [AppComponent]
