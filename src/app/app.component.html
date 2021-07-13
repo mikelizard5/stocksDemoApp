@@ -6,8 +6,8 @@
       </span>
     </div>
     <div class="header-nav">
-      <a herf="javascript://" class="nav-link nav-text">Dashboard</a>
-      <a herf="javascript://" class="nav-link nav-text">Manage</a>
+      <a [routerLink]="['/']" class="nav-link nav-text">Dashboard</a>
+      <a [routerLink]="['/manage']" class="nav-link nav-text">Manage</a>
     </div>
     <div class="header-actions">
       <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
@@ -16,7 +16,6 @@
     </div>
   </header>
   <main class="content-container">
-    <manage></manage>
+    <router-outlet></router-outlet>
   </main>
 </div>
-<router-outlet></router-outlet>
