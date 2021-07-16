@@ -1,0 +1,30 @@
+<clr-wizard #wizard [(clrWizardOpen)]="open">
+  <clr-wizard-title>Introduction/Help</clr-wizard-title>
+
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Before you start...</ng-template>
+    <ng-template clrPageNavTitle>What YOU need to know</ng-template>
+    <p class="content-for-page-1">Here's a quick Intro</p>
+    <p> Firstly before we go any further by all means you can leave this immdiately.
+        Just know this is inteded to help you navigate and understand how this app functions.
+        So if you want to look on your own for now then go right ahead and if you need help later then 
+        just click on this icon <clr-icon shape="help-info"></clr-icon> on the top right corner.
+        It will bring you back here and you can procced either through all the steps or simply choosing one specific to look at.
+    </p>
+  </clr-wizard-page>
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Title for page 2</ng-template>
+    <ng-template clrPageNavTitle>Step 2</ng-template>
+    <p class="content-for-page-2">Content for step 2</p>
+  </clr-wizard-page>
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Title for page 3</ng-template>
+    <ng-template clrPageNavTitle>Step 3</ng-template>
+    <p class="content-for-page-3">Content for step 3</p>
+  </clr-wizard-page>
+</clr-wizard>
