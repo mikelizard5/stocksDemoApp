@@ -11,12 +11,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StocksService } from './services/stocks.service';
 import { ManageComponent } from './components/manage/manage.component';
 import { FormsModule } from '@angular/forms';
+import { MultistepComponent } from './components/multistep/multistep.component';
 @NgModule({
   declarations: [
     AppComponent,
     SummaryComponent,
     DashboardComponent,
-    ManageComponent
+    ManageComponent,
+    MultistepComponent
   ],
   imports: [
     BrowserModule,

@@ -10,12 +10,12 @@
       <a [routerLink]="['/manage']" class="nav-link nav-text">Manage</a>
     </div>
     <div class="header-actions">
-      <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+      <a [routerLink]="['/help']" class="nav-link nav-icon" aria-label="settings">
         <clr-icon shape="help-info" class="is-inverse"></clr-icon>
       </a>
     </div>
   </header>
   <main class="content-container">
-    <router-outlet></router-outlet>
+    <multistep></multistep>
   </main>
 </div>
