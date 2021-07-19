@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { StocksService } from 'src/app/services/stocks.service';
 @Component({
   selector: 'manage',
