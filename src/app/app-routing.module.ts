@@ -5,16 +5,12 @@ import { MultistepComponent } from "./components/multistep/multistep.component";
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'Dashboard',
         component: DashboardComponent
     },
     {
-        path: 'manage',
+        path: '',
         component: ManageComponent
-    },
-    {
-        path: 'help',
-        component: MultistepComponent
     }
 ];
 
