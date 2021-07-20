@@ -1,11 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'multistep',
+  selector: 'multistep-wizard',
   templateUrl: './multistep.component.html',
   styleUrls: ['./multistep.component.scss']
 })
 export class MultistepComponent{
-  @ViewChild('wizard')
+  email: string = '';
+  password: any = '';
+  username(){
+    console.log(this.email);
+  }
+  @ViewChild('wizard') wizard: any;
   open = true;
 }
