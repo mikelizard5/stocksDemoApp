@@ -24,7 +24,7 @@
         <input clrInput name='password' [(ngModel)]='password' type="password" placeholder="Input your password"/>
         <clr-control-error>You must provide your last name!</clr-control-error>
       </clr-input-container>
-      <button class="btn" (onclick)="username()">Submit</button>
+      <button class="btn" (click)="username()">Submit</button>
     </form>
   </clr-wizard-page>
   <clr-wizard-page>
@@ -38,8 +38,20 @@
     <ng-template clrPageTitle>Stocks</ng-template>
     <ng-template clrPageNavTitle>Your first stocks</ng-template>
     <p class="content-for-page-4">Please input at least one stock to watch.</p>
-    <p>
-      <manage></manage>
-    </p>
+      <form clrForm (submit)="add()">
+        <input clrInput name="stock" [(ngModel)]="stock" type="text" placeholder="Add Stock"/>
+      </form>
+      <table class="table">
+        <tbody>
+            <tr *ngFor="let symbol of symbols">
+                <td id="symbol">{{symbol}}</td>
+                <td>
+                    <button class="btn btn-link" (click)="remove(symbol)">
+                        <b>remove</b>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
   </clr-wizard-page>
 </clr-wizard>
