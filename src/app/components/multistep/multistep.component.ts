@@ -8,9 +8,27 @@ import { StocksService } from 'src/app/services/stocks.service';
 export class MultistepComponent{
   email: string = '';
   password: any = '';
+  code: any = '';
+  validate(){
+    if (this.code!=''){
+      if (this.code == 1234){
+        console.log("you good");
+      }else{
+        console.log("nah b");
+        return true;
+      }
+      return false;
+    }else{
+     return true;
+    }
+  }
   username(){
-    this.email;
-    console.log(this.email);
+    if (this.email!='' && this.password!=''){
+      console.log(this.email && this.password);
+      return false;
+    }else{
+      return true;
+    }
   }
   symbols: Array<string>;
   stock: string = '';

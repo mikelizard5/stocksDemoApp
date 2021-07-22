@@ -7,8 +7,8 @@ import { StocksService, StockInterface } from 'src/app/services/stocks.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  stocks: Array<StockInterface> =[];
-  symbols: Array<string> =[];
+  stocks: Array<StockInterface> = [];
+  symbols: Array<string> = [];
 
   constructor(private service: StocksService) {
     this.symbols = service.get();
@@ -17,5 +17,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.service.load(this.symbols).subscribe(stocks => this.stocks = stocks);
   }
-
 }

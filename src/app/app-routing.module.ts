@@ -4,11 +4,11 @@ import { ManageComponent } from "./components/manage/manage.component";
 
 const routes: Routes = [
     {
-        path: 'Dashboard',
+        path: '',
         component: DashboardComponent
     },
     {
-        path: '',
+        path: 'Manage',
         component: ManageComponent
     }
 ];

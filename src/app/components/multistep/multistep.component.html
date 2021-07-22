@@ -1,4 +1,4 @@
-<clr-wizard #wizard [(clrWizardOpen)]= "open">
+<clr-wizard #wizard [(clrWizardOpen)]= "open" [clrWizardSize]="'md'">
   <clr-wizard-title>Begin Setup</clr-wizard-title>
 
   <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
@@ -10,36 +10,41 @@
     <ng-template clrPageNavTitle>Welcome</ng-template>
     <p class="content-for-page-1">Here's a quick introduction, you'll begin setting up your account in order for you to get the best experince!</p>
   </clr-wizard-page>
-  <clr-wizard-page>
+  <clr-wizard-page [clrWizardPageNextDisabled]='username()'>
     <ng-template clrPageTitle>Creat account</ng-template>
     <ng-template clrPageNavTitle>New account</ng-template>
     <p class="content-for-page-2">This is neccesary in order to save the stocks you're tracking.</p>
     <form clrForm >
       <clr-input-container>
         <label>Email:</label>
-        <input clrInput name='email' [(ngModel)]='email' placeholder="Input your email"/>
+        <input clrInput required name='email' [(ngModel)]='email' placeholder="Input your email"/>
+        <clr-control-error>You must input your email!</clr-control-error> 
       </clr-input-container>
       <clr-input-container>
         <label>Create Password:</label>
-        <input clrInput name='password' [(ngModel)]='password' type="password" placeholder="Input your password"/>
-        <clr-control-error>You must provide your last name!</clr-control-error>
+        <input clrInput required name='password' [(ngModel)]='password' type="password" placeholder="Input your password"/>
+        <clr-control-error>You must create a password!</clr-control-error>
       </clr-input-container>
-      <button class="btn" (click)="username()">Submit</button>
     </form>
   </clr-wizard-page>
-  <clr-wizard-page>
+  <clr-wizard-page [clrWizardPageNextDisabled]='validate()'>
     <ng-template clrPageTitle>Account Validation</ng-template>
     <ng-template clrPageNavTitle>Conformation</ng-template>
     <p class="content-for-page-3">A validation code has been sent to your input please enter code.</p>
-    <p>
-    </p>
+    <form clrForm >
+      <clr-input-container>
+        <label>Validation Code:</label>
+        <input clrInput required name='code' [(ngModel)]='code' placeholder="Input code here"/>
+        <clr-control-error>You must enter validation code!</clr-control-error>
+      </clr-input-container>
+    </form>
   </clr-wizard-page>
   <clr-wizard-page>
     <ng-template clrPageTitle>Stocks</ng-template>
     <ng-template clrPageNavTitle>Your first stocks</ng-template>
     <p class="content-for-page-4">Please input at least one stock to watch.</p>
       <form clrForm (submit)="add()">
-        <input clrInput name="stock" [(ngModel)]="stock" type="text" placeholder="Add Stock"/>
+        <input id='input-stock'clrInput name="stock" [(ngModel)]="stock" type="text" placeholder="Add Stock"/>
       </form>
       <table class="table">
         <tbody>

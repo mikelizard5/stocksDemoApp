@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-let stocks: Array<string> = [];
+let stocks: Array<string> = ['vmw'];
 let service: string = 'https://angular2-in-action-api.herokuapp.com';
 
 export interface StockInterface {
