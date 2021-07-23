@@ -14,7 +14,7 @@ export class MultistepComponent{
       if (this.code == 1234){
         console.log("you good");
       }else{
-        console.log("nah b");
+        
         return true;
       }
       return false;
@@ -24,11 +24,14 @@ export class MultistepComponent{
   }
   username(){
     if (this.email!='' && this.password!=''){
-      console.log(this.email && this.password);
       return false;
     }else{
       return true;
     }
+  }
+  update(){
+    console.log(this.email);
+    console.log(this.password);
   }
   symbols: Array<string>;
   stock: string = '';
