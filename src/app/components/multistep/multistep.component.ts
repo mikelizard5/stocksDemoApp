@@ -12,9 +12,7 @@ export class MultistepComponent{
   validate(){
     if (this.code!=''){
       if (this.code == 1234){
-        console.log("you good");
       }else{
-        
         return true;
       }
       return false;
