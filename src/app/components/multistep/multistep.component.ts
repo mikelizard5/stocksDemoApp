@@ -12,24 +12,24 @@ export class MultistepComponent{
   validate(){
     if (this.code!=''){
       if (this.code == 1234){
+        return false;
       }else{
         return true;
       }
-      return false;
     }else{
      return true;
     }
   }
-  username(){
+  account(){
     if (this.email!='' && this.password!=''){
       return false;
     }else{
       return true;
     }
   }
-  update(){
+  user(){
     console.log(this.email);
-    console.log(this.password);
+    return this.email;
   }
   symbols: Array<string>;
   stock: string = '';

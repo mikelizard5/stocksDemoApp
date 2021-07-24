@@ -10,7 +10,7 @@
     <ng-template clrPageNavTitle>Welcome</ng-template>
     <p class="content-for-page-1">Here's a quick introduction, you'll begin setting up your account in order for you to get the best experince!</p>
   </clr-wizard-page>
-  <clr-wizard-page [clrWizardPageNextDisabled]='username()'(clrWizardPageOnCommit)="update()">
+  <clr-wizard-page [clrWizardPageNextDisabled]='account()'(clrWizardPageOnCommit)="user()">
     <ng-template clrPageTitle>Creat account</ng-template>
     <ng-template clrPageNavTitle>New account</ng-template>
     <p class="content-for-page-2">This is neccesary in order to save the stocks you're tracking.</p>

@@ -29,7 +29,7 @@ import { MultistepComponent } from './components/multistep/multistep.component';
     ClrIconModule,
     FormsModule
   ],
-  providers: [StocksService],
+  providers: [StocksService, MultistepComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
