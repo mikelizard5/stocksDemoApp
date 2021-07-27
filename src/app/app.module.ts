@@ -12,13 +12,15 @@ import { StocksService } from './services/stocks.service';
 import { ManageComponent } from './components/manage/manage.component';
 import { FormsModule } from '@angular/forms';
 import { MultistepComponent } from './components/multistep/multistep.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 @NgModule({
   declarations: [
     AppComponent,
     SummaryComponent,
     DashboardComponent,
     ManageComponent,
-    MultistepComponent
+    MultistepComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
