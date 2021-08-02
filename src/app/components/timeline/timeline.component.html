@@ -1,0 +1,64 @@
+<clr-timeline>
+    <clr-timeline-step [clrState]="start">
+        <clr-timeline-step-title>Investing?</clr-timeline-step-title>
+        <clr-timeline-step-description>If you're intrested in buying stocks click next and the process will begin to get you set up.
+            <button id="next" class="btn" (click)="investing()">Next</button>
+        </clr-timeline-step-description>
+    </clr-timeline-step>
+    <clr-timeline-step [clrState]="card">
+        <clr-timeline-step-title>Debit card information</clr-timeline-step-title>
+        <clr-timeline-step-description>This is confidential and will of course only be used to purchase and sell stocks.
+            <button class="btn btn-sm"(click)="card_input()">Input Card Informatiom</button>
+            <clr-modal [clrModalSize]="'sm'" [(clrModalOpen)]="closed" [clrModalClosable]="false">
+                <h3 class="modal-title">Input Card Information</h3>
+                <div class="modal-body">
+                    <form clrForm>
+                        <clr-input-container>
+                            <label>Debit Card#:</label>
+                            <input clrInput required name='Debit' [(ngModel)]='Debit' placeholder="Input Here"/>
+                            <clr-control-error>You must input your Debit card!</clr-control-error> 
+                        </clr-input-container>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="check()" closable="closed">
+                    enter
+                  </button>
+                </div>
+              </clr-modal>
+        </clr-timeline-step-description>
+    </clr-timeline-step>
+    <clr-timeline-step [clrState]="buy">
+        <clr-timeline-step-title>Buying Stocks</clr-timeline-step-title>
+        <clr-timeline-step-description>
+            <div *ngIf="this.buy == this.stateCurrent">
+                <form clrStepper #contactForm="ngForm" >
+                    <clr-stepper-panel ngModelGroup="stock">
+                    <clr-step-title>Stocks</clr-step-title>
+                    <clr-step-description>Select which stocks you'd like to invest in.</clr-step-description>
+                    <clr-step-content>
+                        
+                    <button clrStepButton="next">next</button>
+                  </clr-step-content>
+                </clr-stepper-panel>
+                <clr-stepper-panel ngModelGroup="invest">
+                  <clr-step-title>Invest</clr-step-title>
+                  <clr-step-description>How much would you like to invest?</clr-step-description>
+                  <clr-step-content>
+                    ...
+                    <button clrStepButton="next">next</button>
+                  </clr-step-content>
+                </clr-stepper-panel>
+                <clr-stepper-panel ngModelGroup="Conformation">
+                  <clr-step-title>Conformation</clr-step-title>
+                  <clr-step-description>Confirm your investment.</clr-step-description>
+                  <clr-step-content>
+                    ...
+                    <button clrStepButton="submit">submit</button>
+                  </clr-step-content>
+                </clr-stepper-panel>
+              </form>
+            </div>
+        </clr-timeline-step-description>
+    </clr-timeline-step>
+</clr-timeline>
