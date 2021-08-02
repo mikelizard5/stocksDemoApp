@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { ClrTimelineStepState } from '@clr/angular';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { StocksService } from 'src/app/services/stocks.service';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -17,6 +17,18 @@ export class TimelineComponent{
   buy = this.stateNotStarted;
   Debit: any = '';
   closed = false;
+  symbols: Array<string>;
+  stock: string = '';
+  constructor(private service: StocksService){
+    this.symbols = service.get();
+  }
+  add(){
+    this.symbols = this.service.add(this.stock.toUpperCase());
+    this.stock = '';
+  }
+  remove(symbol:any){
+    this.symbols = this.service.remove(symbol);
+  }
   investing(){
     this.start = this.stateSuccess;
     this.card = this.stateCurrent;
@@ -36,5 +48,4 @@ export class TimelineComponent{
       return this.closed = true;
     }
   }
-  templateForm={}
 }

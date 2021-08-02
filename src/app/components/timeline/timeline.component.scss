@@ -1,0 +1,34 @@
+label{
+    padding-right:5vw;
+}
+table{
+    &.table{
+        margin: unset;
+    }
+    td{
+        font-size: 15px;
+        vertical-align: unset;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        &#symbol{
+            text-align: left;
+        }
+        text-align: right;
+        button{
+            font-size: 15px;
+        }
+    }
+}
+form{
+    &.clr-form{
+        padding: 5px;
+    }
+    input{
+        &.clr-input{
+            font-size: 20px;
+        }
+    }
+    #input-stock{
+        width: 15vw;
+    }
+}

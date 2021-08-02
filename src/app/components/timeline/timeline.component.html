@@ -35,9 +35,23 @@
                 <form clrStepper #contactForm="ngForm" >
                     <clr-stepper-panel ngModelGroup="stock">
                     <clr-step-title>Stocks</clr-step-title>
-                    <clr-step-description>Select which stocks you'd like to invest in.</clr-step-description>
+                    <clr-step-description>Search for a stock you'd like to invest in.</clr-step-description>
                     <clr-step-content>
-                        
+                        <form clrForm (submit)="add()">
+                            <input id='input-stock'clrInput name="stock" [(ngModel)]="stock" type="text" placeholder="Add Stock"/>
+                          </form>
+                          <table class="table">
+                            <tbody>
+                                <tr *ngFor="let symbol of symbols">
+                                    <td id="symbol">{{symbol}}</td>
+                                    <td>
+                                        <button class="btn btn-link" (click)="remove(symbol)">
+                                            <b>remove</b>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                          </table>
                     <button clrStepButton="next">next</button>
                   </clr-step-content>
                 </clr-stepper-panel>
