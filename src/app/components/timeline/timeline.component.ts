@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnChanges} from '@angular/core';
 import { ClrTimelineStepState } from '@clr/angular';
 import { StocksService } from 'src/app/services/stocks.service';
 @Component({
@@ -19,6 +19,7 @@ export class TimelineComponent{
   closed = false;
   symbols: Array<string>;
   stock: string = '';
+  
   constructor(private service: StocksService){
     this.symbols = service.get();
   }
@@ -30,9 +31,8 @@ export class TimelineComponent{
     this.symbols = this.service.remove(symbol);
   }
   investing(){
-    this.start = this.stateSuccess;
     this.card = this.stateCurrent;
-    
+    this.start = this.stateSuccess;
   }
   card_input(){
     this.card = this.stateProcessing;
@@ -47,5 +47,8 @@ export class TimelineComponent{
       console.log(this.Debit)
       return this.closed = true;
     }
+  }
+  finish(){
+    this.buy = this.stateSuccess
   }
 }

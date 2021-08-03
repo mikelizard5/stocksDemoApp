@@ -2,13 +2,17 @@
     <clr-timeline-step [clrState]="start">
         <clr-timeline-step-title>Investing?</clr-timeline-step-title>
         <clr-timeline-step-description>If you're intrested in buying stocks click next and the process will begin to get you set up.
+          <div *ngIf="start == this.stateCurrent">
             <button id="next" class="btn" (click)="investing()">Next</button>
+          </div>  
         </clr-timeline-step-description>
     </clr-timeline-step>
     <clr-timeline-step [clrState]="card">
         <clr-timeline-step-title>Debit card information</clr-timeline-step-title>
         <clr-timeline-step-description>This is confidential and will of course only be used to purchase and sell stocks.
+          <div *ngIf="card == this.stateCurrent"> 
             <button class="btn btn-sm"(click)="card_input()">Input Card Informatiom</button>
+          </div> 
             <clr-modal [clrModalSize]="'sm'" [(clrModalOpen)]="closed" [clrModalClosable]="false">
                 <h3 class="modal-title">Input Card Information</h3>
                 <div class="modal-body">
@@ -31,7 +35,7 @@
     <clr-timeline-step [clrState]="buy">
         <clr-timeline-step-title>Buying Stocks</clr-timeline-step-title>
         <clr-timeline-step-description>
-            <div *ngIf="this.buy == this.stateCurrent">
+            <div *ngIf="this.buy == this.stateCurrent || this.buy == this.stateSuccess">
                 <form clrStepper #contactForm="ngForm" >
                     <clr-stepper-panel ngModelGroup="stock">
                     <clr-step-title>Stocks</clr-step-title>
@@ -68,7 +72,7 @@
                   <clr-step-description>Confirm your investment.</clr-step-description>
                   <clr-step-content>
                     ...
-                    <button clrStepButton="submit">submit</button>
+                    <button clrStepButton="submit" (click)="finish()">submit</button>
                   </clr-step-content>
                 </clr-stepper-panel>
               </form>
