@@ -1,6 +1,6 @@
-import { Component, OnChanges} from '@angular/core';
+import { Component } from '@angular/core';
 import { ClrTimelineStepState } from '@clr/angular';
-import { StocksService } from 'src/app/services/stocks.service';
+import { StockInterface, StocksService } from 'src/app/services/stocks.service';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -19,6 +19,10 @@ export class TimelineComponent{
   closed = false;
   symbols: Array<string>;
   stock: string = '';
+  stock_info: Array<StockInterface> = [];
+  invest: number = parseInt('');
+  profit: Array<number> = [];
+
   
   constructor(private service: StocksService){
     this.symbols = service.get();
@@ -47,6 +51,11 @@ export class TimelineComponent{
       console.log(this.Debit)
       return this.closed = true;
     }
+  }
+  buying(money:number){
+    money = 1 + 100;
+    this.profit.push(money);
+    console.log(this.profit);
   }
   finish(){
     this.buy = this.stateSuccess

@@ -8,7 +8,7 @@ import { StocksService, StockInterface } from 'src/app/services/stocks.service';
 })
 export class DashboardComponent implements OnInit {
   stocks: Array<StockInterface> = [];
-  symbols: Array<string> = [];
+  symbols: Array<string>;
 
   constructor(private service: StocksService) {
     this.symbols = service.get();

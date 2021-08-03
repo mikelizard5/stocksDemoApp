@@ -63,7 +63,18 @@
                   <clr-step-title>Invest</clr-step-title>
                   <clr-step-description>How much would you like to invest?</clr-step-description>
                   <clr-step-content>
-                    ...
+                    <table class="table">
+                      <tbody>
+                          <tr *ngFor="let symbol of symbols">
+                              <td id="symbol">{{symbol}}</td>
+                              <td>
+                                <form clrForm (submit)="buying(invest)">
+                                  <input id='input-invest'clrInput name="invest" [(ngModel)]="invest" type="text" placeholder="How much?"/>
+                                </form>
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
                     <button clrStepButton="next">next</button>
                   </clr-step-content>
                 </clr-stepper-panel>
@@ -71,7 +82,7 @@
                   <clr-step-title>Conformation</clr-step-title>
                   <clr-step-description>Confirm your investment.</clr-step-description>
                   <clr-step-content>
-                    ...
+                    To confirm return to the dashboard and the stock you've choosen to invest should be displayed with your investment.
                     <button clrStepButton="submit" (click)="finish()">submit</button>
                   </clr-step-content>
                 </clr-stepper-panel>
