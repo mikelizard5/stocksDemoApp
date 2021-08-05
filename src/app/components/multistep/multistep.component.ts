@@ -28,7 +28,6 @@ export class MultistepComponent{
     }
   }
   user(){
-    console.log(this.email);
     return this.email;
   }
   symbols: Array<string>;

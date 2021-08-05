@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { convertStringPropValuePairsToTuple } from '@cds/core/internal';
 import { ClrTimelineStepState } from '@clr/angular';
 import { StockInterface, StocksService } from 'src/app/services/stocks.service';
 @Component({
@@ -17,11 +18,11 @@ export class TimelineComponent{
   buy = this.stateNotStarted;
   Debit: any = '';
   closed = false;
-  symbols: Array<string>;
+  symbols: Array<string> = [];
   stock: string = '';
-  stock_info: Array<StockInterface> = [];
-  invest: number = parseInt('');
-  profit: Array<number> = [];
+  invest: string = '';
+  stocks: Array<StockInterface> = []
+  profit: Array<string> = [];
 
   
   constructor(private service: StocksService){
@@ -34,6 +35,7 @@ export class TimelineComponent{
   remove(symbol:any){
     this.symbols = this.service.remove(symbol);
   }
+  
   investing(){
     this.card = this.stateCurrent;
     this.start = this.stateSuccess;
@@ -52,10 +54,15 @@ export class TimelineComponent{
       return this.closed = true;
     }
   }
-  buying(money:number){
-    money = 1 + 100;
-    this.profit.push(money);
-    console.log(this.profit);
+  select(){
+    for(this.stock in this.symbols){
+      this.service.load(this.symbols).subscribe(stocks => this.stocks = stocks);
+    }
+    this.stock = '';
+  }
+  buying(){
+    console.log(this.symbols);
+    console.log(this.stocks);
   }
   finish(){
     this.buy = this.stateSuccess

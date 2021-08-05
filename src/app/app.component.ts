@@ -10,7 +10,5 @@ export class AppComponent {
   title = 'stocks'
   username:string = ''
   constructor( private multistepWizard: MultistepComponent){
-    this.username = this.multistepWizard.user();
-    console.log(this.multistepWizard.user());
   }
 }

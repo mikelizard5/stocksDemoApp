@@ -56,7 +56,7 @@
                                 </tr>
                             </tbody>
                           </table>
-                    <button clrStepButton="next">next</button>
+                    <button clrStepButton="next" (click)="select()">next</button>
                   </clr-step-content>
                 </clr-stepper-panel>
                 <clr-stepper-panel ngModelGroup="invest">
@@ -68,14 +68,14 @@
                           <tr *ngFor="let symbol of symbols">
                               <td id="symbol">{{symbol}}</td>
                               <td>
-                                <form clrForm (submit)="buying(invest)">
-                                  <input id='input-invest'clrInput name="invest" [(ngModel)]="invest" type="text" placeholder="How much?"/>
+                                <form clrForm>
+                                  <input id='input-invest'clrInput name="invest" type="text" placeholder="How much?"/>
                                 </form>
                               </td>
                           </tr>
                       </tbody>
                     </table>
-                    <button clrStepButton="next">next</button>
+                    <button clrStepButton="next" (click)="buying()">next</button>
                   </clr-step-content>
                 </clr-stepper-panel>
                 <clr-stepper-panel ngModelGroup="Conformation">
