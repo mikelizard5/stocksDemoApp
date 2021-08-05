@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { convertStringPropValuePairsToTuple } from '@cds/core/internal';
 import { ClrTimelineStepState } from '@clr/angular';
 import { StockInterface, StocksService } from 'src/app/services/stocks.service';
 @Component({
@@ -20,7 +19,7 @@ export class TimelineComponent{
   closed = false;
   symbols: Array<string> = [];
   stock: string = '';
-  invest: string = '';
+  invest: Array<string> = [];
   stocks: Array<StockInterface> = []
   profit: Array<string> = [];
 
